@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D:wght@300&family=Lobster&family=Noticia+Text&display=swap');
-        body {margin: 0; padding: 0;}
+        body {margin: 0; padding: 0; overflow-x: hidden;}
         h1 {font-family: 'Lobster', cursive; font-size:80px; color:white; text-align:center; margin:20px}
         h2 {font-family: 'Arapey', serif; font-size:37px; color:white}
         h3 {font-family: 'Noticia Text', serif; font-size:27px; color:white}
@@ -22,16 +22,16 @@
         ul.idol > li > p {font-family: 'Noticia Text', serif; font-size:70px; color:white;
           -webkit-text-stroke:1.5px #808080; position:absolute; z-index:0; margin-top:1%;}
         .center {display: grid; place-items: center;}
-        .imagediv {display: flex; flex-direction: row; align-items: stretch; width: 100%; height:5000px; overflow: hidden;}
-        .shapes {width:100%; position:absolute; top:-1000px; left:1920px; flex: 1;}
+        .imagediv {display: flex; flex-direction: row; align-items: stretch; width: 100%; overflow: hidden;}
+        .shapes {width:100%; position:absolute; top:-1000px;}
 
         #textfields {font-family: 'Noticia Text', serif; font-size:27px;}
         #name {width:40%; font-size:120%; margin: 5px} #phone {width:40%; font-size:120%; margin: 5px}
         #house {width:81%; font-size:120%; margin: 5px} #email {width:81%; font-size:120%; margin: 5px}
         #post {cursor: pointer; height:160px; margin-top:0.5%}
-        #woomy {width:100%; position:absolute; top:0px; left:0px; left:0px; z-index:-10}
-        #blue1 {z-index:-2} #blue2 {z-index:-3} #blue3 {z-index:-4} #blue4 {z-index:-5}
-        #blue5 {z-index:-6} #blue6 {z-index:-7} #blue7 {z-index:-8} #blue8 {z-index:-9}
+        #woomy {width:100%; height:500%; position:absolute; top:0px; left:0px; left:0px; z-index:-10}
+        #blue1 {width:200%; left:-4000px; top:-4000px; z-index:-2;} #blue2 {left:1000px; z-index:-3} #blue3 {width:200%; height:250%; left:-4000px; top:2000px; z-index:-4} #blue4 {left:-1000px; z-index:-5}
+        #blue5 {left:-1000px; z-index:-6} #blue6 {z-index:-7} #blue7 {left:1000px; z-index:-8} #blue8 {width:300%; height:300%; left:-6000px; top:8000px; z-index:-9}
 
         @media only screen and (max-width: 700px) {
         h1 {font-family: 'Lobster', cursive; font-size:40px; color:white; text-align:center; margin:20px}
@@ -49,6 +49,7 @@
 woomy.png is 1080 by 5000, while everything else is 3080 by 7000-->
   <body>
 <div class='imagediv'>
+
 <img src="https://cdn.discordapp.com/attachments/963991816665985137/981992543409561690/woomy.png"; id='woomy';>
 <img src="https://cdn.discordapp.com/attachments/906770069344878642/982011071349002250/blue1.png"; id='blue1'; class='shapes';>
 <img src="https://cdn.discordapp.com/attachments/906770069344878642/982011071726518392/blue2.png"; id='blue2'; class='shapes';>
