@@ -23,7 +23,7 @@
           -webkit-text-stroke:1.5px #808080; position:absolute; z-index:0; margin-top:1%;}
         .center {display: grid; place-items: center;}
         .imagediv {display: flex; flex-direction: row; align-items: stretch; width: 100%; overflow: hidden;}
-        .shapes {width:50%; height:500%; top:-30%; position:absolute;}
+        .shapes {width:50%; height:500%; top:-30%; position:absolute; -webkit-transform: translate3d(0,0,0);}
 
         #textfields {font-family: 'Noticia Text', serif; font-size:27px;}
         #name {width:40%; font-size:120%; margin: 5px} #phone {width:40%; font-size:120%; margin: 5px}
@@ -32,6 +32,12 @@
         #woomy {width:100%; height:500%; position:absolute; z-index:-10}
         #blue1 {width:100%; height:500%; z-index:-2} #blue2 {top:-120%; left:50%; z-index:-3} #blue3 {width:100%; z-index:-4} #blue4 {z-index:-5}
         #blue5 {z-index:-6} #blue6 {z-index:-7} #blue7 {left:30%; top:-150%; width:70%; height:700%; z-index:-8} #blue8 {top:40%; width:110%; height:200%; z-index:-9}
+        #box {top:100%; left:40%; height:900%; width:60%; z-index:-1; opacity:80%; border-radius: 25px;}
+
+       @media only screen and (max-width: 700px) {
+       #blue2 {top:-120%; left:50%; z-index:-3} #blue3 {width:100%; z-index:-4} #blue4 {z-index:-5}
+
+       }
 
         @media only screen and (max-width: 700px) {
         h1 {font-family: 'Lobster', cursive; font-size:40px; color:white; text-align:center; margin:20px}
@@ -49,16 +55,16 @@
 woomy.png is 1080 by 5000, while everything else is 3080 by 7000-->
   <body>
 <div class='imagediv'>
-
 <img src="https://cdn.discordapp.com/attachments/906770069344878642/982166276183052308/woom.png"; id='woomy';>
-<img src="https://cdn.discordapp.com/attachments/906770069344878642/982160689688891452/bluev1.png"; id='blue1'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982185383955689502/bluev1.png"; id='blue1'; class='shapes';>
 <img src="https://cdn.discordapp.com/attachments/906770069344878642/982160689906978836/bluev2.png"; id='blue2'; class='shapes';>
-<img src="https://cdn.discordapp.com/attachments/906770069344878642/982160690162851840/bluev3dark.png"; id='blue3'; class='shapes';>
-<img src="https://cdn.discordapp.com/attachments/906770069344878642/982160690418708490/bluev4dark.png"; id='blue4'; class='shapes';>
-<img src="https://cdn.discordapp.com/attachments/906770069344878642/982160690653573150/bluev5.png"; id='blue5'; class='shapes';>
-<img src="https://cdn.discordapp.com/attachments/906770069344878642/982160691039440916/bluev6oran.png"; id='blue6'; class='shapes';>
-<img src="https://cdn.discordapp.com/attachments/906770069344878642/982160691446300682/bluev7oran.png"; id='blue7'; class='shapes';>
-<img src="https://cdn.discordapp.com/attachments/906770069344878642/982160691962195968/bluev8oran.png"; id='blue8'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982242644837142548/bluev3dark.png"; id='blue3'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982242645093019728/bluev4dark.png"; id='blue4'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982242645348864030/bluev5.png"; id='blue5'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982242645562785852/bluev6oran.png"; id='blue6'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982242645814415430/bluev7oran.png"; id='blue7'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982242646019960882/bluev8oran.png"; id='blue8'; class='shapes';>
+<img src="https://cdn.discordapp.com/attachments/906770069344878642/982174378479484998/box.png"; id='box'; class='shapes';>
 </div>
 
     <h1>AMSantos's Idol Contact Directory</h1>
