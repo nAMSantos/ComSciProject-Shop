@@ -17,6 +17,11 @@ h4, h5, p {font-family: 'Noticia Text', serif; font-size:30px; color:#262626;}
 /*page elements*/
 hr {border-top: 3px solid #999999;}
 input {border:none; border-radius: 5px;}
+  /*tags*/
+	.tagdiv {display:flex;}
+	.tag {position:absolute; margin-top:20px;
+		position:relative; width:30%; height:40%; background-color:#63A6FF;
+		font-family: 'Arapey', serif; font-size:36px; color:white;}
 
 .button {position:absolute; margin-top:20px;
   position:relative; width:57%; height:80%; background-color:#FF8800;
