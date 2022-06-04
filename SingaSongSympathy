@@ -1,38 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>mitski's class of 2013</title>
+	<title>ComSciProject Store | Sing a Song Sympathy!</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://namsantos.github.io/ComSciProject-Shop/css/productpage.css">
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
-	<!--CSS-->
-	<style>
-	@import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D&family=Lobster&family=Noticia+Text&display=swap');
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-			body {margin: 0; padding: 0; overflow-x: hidden;}
-			h1 {font-family: 'Lobster', cursive; font-size:80px; color:white; text-align:center; margin:20px}
-			h2 {font-family: 'K2D', sans-serif; color:#262626; margin:5px;}
-			h3 {font-family: 'Noticia Text', serif; font-size:37px; color:#262626}
-			h4, h5, p {font-family: 'Noticia Text', serif; font-size:30px; color:#262626;}
-
-			* {box-sizing: border-box;}
-			input {border:none; border-radius: 5px;}
-
-		.container{margin-top: 75px;}
-		.productimage {width:40%; float:left;}
-			.img {max-height:430px; width:auto;}
-		.infobox {width:50%; float:right;}
-		hr {border-top: 3px solid #999999;}
-
-			.button {position:absolute; margin-top:20px;
-				position:relative; width:57%; height:80%; background-color:#FF8800;
-				font-family: 'Arapey', serif; font-size:36px; color:white; background-image:url(https://cdn.discordapp.com/attachments/906770069344878642/982570275512135680/buttonbg.png); background-repeat:no-repeat;}
-	</style>
 </head>
 <body>
 	<div class="container">
