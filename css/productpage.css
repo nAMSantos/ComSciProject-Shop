@@ -17,15 +17,23 @@ h4, h5, p {font-family: 'Noticia Text', serif; font-size:30px; color:#262626;}
 /*page elements*/
 hr {border-top: 3px solid #999999;}
 input {border:none; border-radius: 5px;}
+.imagaccompaniment {display:inline-flex;}
   /*tags*/
 	.tagdiv {display:flex;}
-	.tag {position:absolute; margin-top:20px;
-		position:relative; width:30%; height:40%; background-color:#63A6FF;
-		font-family: 'Arapey', serif; font-size:36px; color:white;}
+	.tag {position:relative; width:auto; height:auto; background-color:#237BBC;
+	font-family: 'Arapey', serif; font-size:22px; color:white;}
 
 .button {position:absolute; margin-top:20px;
   position:relative; width:57%; height:80%; background-color:#FF8800;
   font-family: 'Arapey', serif; font-size:36px; color:white; background-image:url(https://cdn.discordapp.com/attachments/906770069344878642/982570275512135680/buttonbg.png); background-repeat:no-repeat;}
+
+/*navigation bar*/
+	.navbar {position:relative; top:0; width:100%; height:auto; background-color:#237BBC;}
+	.search {width:150%; height:50px; padding:10px; margin:10px;
+	font-family: 'Noticia Text', serif; font-size:30px;}
+	.searchsubmit {width:80px; height:50px; border:none; border-radius: 5px; margin:10px 0px 10px;
+	background-image:url(https://cdn.discordapp.com/attachments/906770069344878642/982687716980428921/search.png); background-repeat:no-repeat;}
+	.navimage {height:100px; width:auto;}
 
 /*media queries*/
 @media only screen and (max-width: 700px) {
