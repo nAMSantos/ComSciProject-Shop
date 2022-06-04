@@ -1,0 +1,38 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D:wght@300&family=Lobster&family=Noticia+Text&display=swap');
+body {margin: 0; padding: 0; overflow-x: hidden;}
+h1 {font-family: 'Lobster', cursive; font-size:80px; color:white; text-align:center; margin:20px}
+h2 {font-family: 'K2D', sans-serif; color:#262626; margin:5px;}
+h3 {font-family: 'Noticia Text', serif; font-size:37px; color:#262626}
+h4, h5, p {font-family: 'Noticia Text', serif; font-size:30px; color:#262626;}
+
+/*page sections*/
+* {box-sizing: border-box;}
+.container{margin-top: 75px;}
+.productimage {width:40%; float:left;}
+.img {max-height:430px; width:auto;}
+.infobox {width:50%; float:right;}
+.footer {position:absolute; bottom:0px; background-color:#56585D}
+
+/*page elements*/
+hr {border-top: 3px solid #999999;}
+input {border:none; border-radius: 5px;}
+
+.button {position:absolute; margin-top:20px;
+  position:relative; width:57%; height:80%; background-color:#FF8800;
+  font-family: 'Arapey', serif; font-size:36px; color:white; background-image:url(https://cdn.discordapp.com/attachments/906770069344878642/982570275512135680/buttonbg.png); background-repeat:no-repeat;}
+
+/*media queries*/
+@media only screen and (max-width: 700px) {
+#blue2 {top:-120%; left:50%; z-index:-3} #blue3 {width:100%; z-index:-4} #blue4 {z-index:-5}
+
+}
+
+@media only screen and (max-width: 700px) {
+h1 {font-family: 'Lobster', cursive; font-size:40px; color:white; text-align:center; margin:20px}
+#post {cursor:pointer; height:150px;}
+}
+
+@media only screen and (max-height:625px) {
+.drawing {visibility:hidden;}
+}
