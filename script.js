@@ -1,144 +1,102 @@
-class CartItem {
-    constructor(name, desc, img, price) {
-        this.name = name
-        this.desc = desc
-        this.img = img
-        this.price = price
-        this.quantity = 1
-    }
+const products = document.querySelectorAll('#add-to-list');
+const shoppingList = document.querySelector('#sopping-list');
+const table = shoppingList.querySelector('table');
+const tbody = table.querySelector('tbody');
+const clearBtn = document.querySelector('#clear');
+const totalM = document.getElementById('total');
+let total = 0;
+
+for(var i = 0;i < products.length;i++){
+    products[i].addEventListener('click',BuyProducts);
 }
+//show cart
+document.addEventListener('DOMContentLoaded',showCart);
 
-class LocalCart {
-    static key = "cartItems"
+function showCart(){
+    let products = getProducts();
+    products.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <th>${product.title}</th>
+            <th>${product.price}</th>
+            <th><a href="#" class="badge badge-danger delete" data-id="${product.id}">X</a></th>
+        `;
+        tbody.appendChild(row);
+        total = total + parseInt(product.price);
+        totalM.innerHTML = `${total} $`;
+    });
+}
+function BuyProducts(e){
+    e.preventDefault();
+    const product = e.target.parentElement;
+    getProductInfo(product);
+}
+function getProductInfo(product){
+    const productInfo = {
 
-    static getLocalCartItems() {
-        let cartMap = new Map()
-        const cart = localStorage.getItem(LocalCart.key)
-        if (cart === null || cart.length === 0) return cartMap
-        return new Map(Object.entries(JSON.parse(cart)))
+        title : product.querySelector('h4').textContent,
+        price : product.querySelector('h5').textContent,
+        id : product.querySelector('a').getAttribute('data-id')
+    };
+    addToCart(productInfo);
+}
+function addToCart(productInfo){
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <th>${productInfo.title}</th>
+        <th>${productInfo.price}</th>
+        <th><a href="#" class="badge badge-danger delete" data-id="${productInfo.id}">X</a></th>
+        `;
+    tbody.appendChild(row);
+    total = total + parseInt(productInfo.price);
+    totalM.innerHTML = `${total} $`;
+    //save to local storage
+    saveProduct(productInfo);
+}
+//add product
+function saveProduct(productInfo){
+    let products = getProducts();
+    products.push(productInfo);
+    localStorage.setItem('products',JSON.stringify(products));
+}
+//get all products from local storage
+function getProducts(){
+    let products;
+    if(localStorage.getItem('products') === null){
+        products = [];
+    }else{
+        products = JSON.parse(localStorage.getItem('products'));
     }
+    return products;
+}
+//remove from cart
+tbody.addEventListener('click',removeProduct);
 
-    static addItemToLocalCart(id, item) {
-        let cart = LocalCart.getLocalCartItems()
-        if (cart.has(id)) {
-            let mapItem = cart.get(id)
-            mapItem.quantity += 1
-            cart.set(id, mapItem)
+function removeProduct(e){
+    let prodcutsList,product,productId;
+    if(e.target.classList.contains('delete')){
+        e.target.parentElement.parentElement.remove();
+        product =  e.target.parentElement.parentElement;
+        productId = product.querySelector('a').getAttribute('data-id');
+    }
+    //remove product from local storage
+    prodcutsList = getProducts();
+    prodcutsList.forEach((product,index)=>{
+        if(product.id === productId){
+            prodcutsList.splice(index,1);
+            total = total - parseInt(product.price);
+            totalM.innerHTML = `${total} $`;
         }
-        else
-            cart.set(id, item)
-        localStorage.setItem(LocalCart.key, JSON.stringify(Object.fromEntries(cart)))
-        updateCartUI()
-
-    }
-
-    static removeItemFromCart(id) {
-        let cart = LocalCart.getLocalCartItems()
-        if (cart.has(id)) {
-            let mapItem = cart.get(id)
-            if (mapItem.quantity > 1) {
-                mapItem.quantity -= 1
-                cart.set(id, mapItem)
-            }
-            else
-                cart.delete(id)
-        }
-        if (cart.length === 0)
-            localStorage.clear()
-        else
-            localStorage.setItem(LocalCart.key, JSON.stringify(Object.fromEntries(cart)))
-        updateCartUI()
-    }
+    });
+    localStorage.setItem('products',JSON.stringify(prodcutsList));
 }
+//clean cart
+clearBtn.addEventListener('click',clearCart);
 
-
-const cartIcon = document.querySelector('.fa-cart-arrow-down')
-const wholeCartWindow = document.querySelector('.whole-cart-window')
-wholeCartWindow.inWindow = 0
-const addToCartBtns = document.querySelectorAll('.add-to-cart-btn')
-addToCartBtns.forEach((btn) => {
-    btn.addEventListener('click', addItemFunction)
-})
-
-function addItemFunction(e) {
-    const id = e.target.parentElement.parentElement.parentElement.getAttribute("data-id")
-    const img = e.target.parentElement.parentElement.previousElementSibling.src
-    const name = e.target.parentElement.previousElementSibling.textContent
-    const desc = e.target.parentElement.children[0].textContent
-    let price = e.target.parentElement.children[1].textContent
-    price = price.replace("Price: $", '')
-    const item = new CartItem(name, desc, img, price)
-    LocalCart.addItemToLocalCart(id, item)
-    console.log(price)
-}
-
-
-cartIcon.addEventListener('mouseover', () => {
-    if (wholeCartWindow.classList.contains('hide'))
-        wholeCartWindow.classList.remove('hide')
-})
-
-cartIcon.addEventListener('mouseleave', () => {
-    // if(wholeCartWindow.classList.contains('hide'))
-    setTimeout(() => {
-        if (wholeCartWindow.inWindow === 0) {
-            wholeCartWindow.classList.add('hide')
-        }
-    }, 500)
-
-})
-
-wholeCartWindow.addEventListener('mouseover', () => {
-    wholeCartWindow.inWindow = 1
-})
-
-wholeCartWindow.addEventListener('mouseleave', () => {
-    wholeCartWindow.inWindow = 0
-    wholeCartWindow.classList.add('hide')
-})
-
-
-function updateCartUI() {
-    const cartWrapper = document.querySelector('.cart-wrapper')
-    cartWrapper.innerHTML = ""
-    const items = LocalCart.getLocalCartItems()
-    if (items === null) return
-    let count = 0
-    let total = 0
-    for (const [key, value] of items.entries()) {
-        const cartItem = document.createElement('div')
-        cartItem.classList.add('cart-item')
-        let price = value.price * value.quantity
-        price = Math.round(price * 100) / 100
-        count += 1
-        total += price
-        total = Math.round(total * 100) / 100
-        cartItem.innerHTML =
-            `
-        <img src="${value.img}"> 
-                       <div class="details">
-                           <h3>${value.name}</h3>
-                           <p>${value.desc}
-                            <span class="quantity">Quantity: ${value.quantity}</span>
-                               <span class="price">Price: $ ${price}</span>
-                           </p>
-                       </div>
-                       <div class="cancel"><i class="fas fa-window-close"></i></div>
-        `
-        cartItem.lastElementChild.addEventListener('click', () => {
-            LocalCart.removeItemFromCart(key)
-        })
-        cartWrapper.append(cartItem)
+function clearCart(){
+    while(tbody.firstChild){
+        tbody.removeChild(tbody.firstChild);
     }
-
-    if (count > 0) {
-        cartIcon.classList.add('non-empty')
-        let root = document.querySelector(':root')
-        root.style.setProperty('--after-content', `"${count}"`)
-        const subtotal = document.querySelector('.subtotal')
-        subtotal.innerHTML = `SubTotal: $${total}`
-    }
-    else
-        cartIcon.classList.remove('non-empty')
+    localStorage.clear();
+    totalM.innerHTML = '';
 }
-document.addEventListener('DOMContentLoaded', () => { updateCartUI() })
