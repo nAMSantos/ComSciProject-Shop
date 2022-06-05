@@ -16,7 +16,7 @@ h4, h5, p {font-family: 'Noticia Text', serif; font-size:30px; color:#262626;}
 
 /*page elements*/
 hr {border-top: 3px solid #999999;}
-input {border:none; border-radius: 5px;}
+input, button {border:none; border-radius: 5px;}
 .imagaccompaniment {display:inline-flex;}
   /*tags*/
 	.tagdiv {display:flex;}
