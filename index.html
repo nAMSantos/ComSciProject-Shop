@@ -12,7 +12,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D:wght@300&family=Lobster&family=Noticia+Text&display=swap');
         body {margin: 0; padding: 0; overflow-x: hidden;}
         h1 {font-family: 'Lobster', cursive; font-size:120px; color:white; text-align:center; margin:20px}
-        h2 {font-family: 'Arapey', serif; font-size:37px; color:white}
+        h2, th{font-family: 'Arapey', serif; font-size:37px; color:white}
         h4, h5 {font-family: 'Noticia Text', serif; color:white; margin-top:2%}
 
 /*forked from our stylesheet*/
@@ -37,7 +37,20 @@
         .button {position:absolute; bottom:0.1%; right:0.01%; width:43px; height:40px; margin-right:4%; background-image:url(https://cdn.discordapp.com/attachments/906770069344878642/982577918599364618/cart.png); background-size:cover}
         .productimage:hover {opacity:80%}
 
-        .footer {position:absolute; bottom:0px; background-color:#56585D}
+        .footer {position:absolute; bottom:-200%; left: 11%; width: 1255px; background-color: lightgrey; border: solid 1px black; border-radius: 5px;}
+        .footer-main {
+                width: 270px;
+                height: 471px;
+                background-color: burlywood;
+                float: left;
+            }
+        .footer-side {
+                width: 700px;
+                height: 441px;
+                padding: 15px;
+                background-color: gainsboro;
+                float: left;
+            }
 
 /*shapes and stuff~ (background elemnts)*/
 .imagediv {display: flex; flex-direction: row; align-items: stretch;}
@@ -135,58 +148,16 @@
 	<input type="button" class="button" value=" ">  </li>
   <li>
     <a href="namsantos.github.io/">
-  <img src="https://st.cdjapan.co.jp/pictures/l/05/23/LACA-15962.jpg?v=1" alt='Aikatsu! - Pure Sweet Harmony' class="productimage">
-    </a>
-    <h4>(Album) Aikatsu Friends! - “Pure Sweet Harmony”</h4>
-    <h5>29.99 USD</h5>
-	<input type="button" class="button" value=" ">  </li>
-  <li>
-    <a href="namsantos.github.io/">
   <img src="https://st.cdjapan.co.jp/pictures/l/03/48/LACA-9786.jpg?v=1" alt='Aikatsu! - BEST FRIENDS!' class="productimage">
     </a>
     <h4>(Best Album) Aikatsu Friends! - “BEST FRIENDS!”</h4>
-    <h5>29.99 USD</h5>
-	<input type="button" class="button" value=" ">  </li>
-  <li>
-    <a href="namsantos.github.io/">
-  <img src="https://st.cdjapan.co.jp/pictures/l/03/47/LACM-14953.jpg?v=1" alt='Aikatsu! - Sing a Song Sympathy!' class="productimage">
-    </a>
-    <h4>(Single) Aikatsu on Parade! - “Sing a Song Sympathy!”</h4>
-    <h5>14.99 USD</h5>
-	<input type="button" class="button" value=" ">  </li>
-  <li>
-    <a href="namsantos.github.io/">
-  <img src="https://st.cdjapan.co.jp/pictures/l/05/23/LACA-15962.jpg?v=1" alt='Aikatsu! - Pure Sweet Harmony' class="productimage">
-    </a>
-    <h4>(Album) Aikatsu Friends! - “Pure Sweet Harmony”</h4>
-    <h5>29.99 USD</h5>
-	<input type="button" class="button" value=" ">  </li>
-  <li>
-    <a href="namsantos.github.io/">
-  <img src="https://st.cdjapan.co.jp/pictures/l/03/48/LACA-9786.jpg?v=1" alt='Aikatsu! - BEST FRIENDS!' class="productimage">
-    </a>
-    <h4>(Best Album) Aikatsu Friends! - “BEST FRIENDS!”</h4>
-    <h5>29.99 USD</h5>
-	<input type="button" class="button" value=" ">  </li>
-  <li>
-    <a href="namsantos.github.io/">
-  <img src="https://st.cdjapan.co.jp/pictures/l/03/47/LACM-14953.jpg?v=1" alt='Aikatsu! - Sing a Song Sympathy!' class="productimage">
-    </a>
-    <h4>(Single) Aikatsu on Parade! - “Sing a Song Sympathy!”</h4>
-    <h5>14.99 USD</h5>
-  <input type="button" class="button" value=" ">  </li>
-  <li>
-    <a href="namsantos.github.io/">
-  <img src="https://st.cdjapan.co.jp/pictures/l/05/23/LACA-15962.jpg?v=1" alt='Aikatsu! - Pure Sweet Harmony' class="productimage">
-    </a>
-    <h4>(Album) Aikatsu Friends! - “Pure Sweet Harmony”</h4>
     <h5>29.99 USD</h5>
   <input type="button" class="button" value=" ">  </li>
   <li>
-    <a href="namsantos.github.io/">
-  <img src="https://st.cdjapan.co.jp/pictures/l/03/48/LACA-9786.jpg?v=1" alt='Aikatsu! - BEST FRIENDS!' class="productimage">
+    <a href="https://namsantos.github.io/ComSciProject-Shop/PureSweetHarmony.html">
+  <img src="https://st.cdjapan.co.jp/pictures/l/05/23/LACA-15962.jpg?v=1" alt='Aikatsu! - Pure Sweet Harmony' class="productimage">
     </a>
-    <h4>(Best Album) Aikatsu Friends! - “BEST FRIENDS!”</h4>
+    <h4>(Album) Aikatsu Friends! - “Pure Sweet Harmony”</h4>
     <h5>29.99 USD</h5>
   <input type="button" class="button" value=" ">  </li>
   <li>
@@ -207,7 +178,7 @@
     <a href="namsantos.github.io/">
   <img src="https://cdn.shopify.com/s/files/1/0011/4651/9637/products/bgr-UO1U_dc599a7c-7555-48e1-b4ac-ca797bd55b79_600x.png?v=162812179" alt='Red (Taylor’s Version)' class="productimage">
     </a>
-    <h4>Red (Taylor’s Version) CD</h4>
+    <h4>Red (Taylor's Version) CD</h4>
     <h5>19.99 USD</h5>
   <input type="button" class="button" value=" ">  </li>
   <li>
@@ -220,6 +191,15 @@
 </ul>
 
 <div class='footer'>
+    <table>
+      <tr>
+        <th>Your Cart</th>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td>Price:</td>
+      </tr>
+    </table>
 </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
