@@ -1,4 +1,4 @@
-const products = document.querySelectorAll('#add-to-list');
+const products = document.querySelectorAll('.button');
 const shoppingList = document.querySelector('#sopping-list');
 const table = shoppingList.querySelector('table');
 const tbody = table.querySelector('tbody');
